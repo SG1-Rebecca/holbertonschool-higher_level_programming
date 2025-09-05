@@ -6,4 +6,4 @@ while alphabet_ascii <=122:
      alphabet_ascii += 1
 """
 for alphabet_ascii in range(97, 123):
-    print(chr(alphabet_ascii), end="")
+    print("{}".format(chr(alphabet_ascii)), end="")

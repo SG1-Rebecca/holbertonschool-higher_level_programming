@@ -5,4 +5,4 @@ for ascii_alphabt in range(97, 123):
         continue
     if ascii_alphabt == 113:
         continue
-    print(chr(ascii_alphabt), end="")
+    print("{}".format(chr(ascii_alphabt)), end="")
