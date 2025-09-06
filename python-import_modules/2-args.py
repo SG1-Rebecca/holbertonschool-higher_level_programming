@@ -4,9 +4,9 @@ if __name__ == "__main__":
     parse_arguments = sys.argv[1:]
     nb_arguments = len(parse_arguments)
     if nb_arguments == 0:
-        print("0 arguments")
+        print("0 arguments", end=".\n")
     elif nb_arguments == 1:
-        print("1 argument")
+        print("1 argument", end=":\n")
         # print("1: {}".format(sys.argv[1]))
     else:
         print("{} arguments: ".format(nb_arguments))
