@@ -7,7 +7,6 @@ if __name__ == "__main__":
         print("0 arguments", end=".\n")
     elif nb_arguments == 1:
         print("1 argument", end=":\n")
-        # print("1: {}".format(sys.argv[1]))
     else:
         print("{} arguments: ".format(nb_arguments))
     for words in range(1, nb_arguments + 1):
