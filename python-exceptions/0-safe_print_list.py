@@ -6,6 +6,6 @@ def safe_print_list(my_list=[], x=0):
             print(my_list[index], end="")
             nb_element += 1
     except IndexError:
-        pass # if x bigger than the length of my_list
+        pass # if index out of the range
     print()
     return nb_element
