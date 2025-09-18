@@ -24,3 +24,31 @@ class Rectangle:
         """
         self._width = width
         self._height = height
+
+    @property
+    def width(self):
+        """
+        Getter of the width of the rectangle.
+
+        Return:
+            The width of the rectangle.
+        """
+        return self._width
+
+    @width.setter
+    def width(self, value):
+        """
+        Setter of the width of the rectangle.
+
+        Args:
+            value (int): The new width value.
+
+        Raises:
+            TypeError if width is not an integer.
+            ValueError if width is less than 0.
+        """
+        if not isinstance(value, int):
+            raise TypeError("width must be an integer")
+        if value < 0:
+            raise ValueError("width must be >= 0")
+        self._width = value
