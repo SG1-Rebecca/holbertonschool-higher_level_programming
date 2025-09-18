@@ -89,3 +89,15 @@ class Rectangle:
             The rectangle area
         """
         return self._width * self._height
+
+    def perimeter(self):
+        """
+        Calculate the perimeter of the rectangle.
+
+        Return:
+            The perimeter of the rectangle.
+            If width or height is equal to 0, perimeter is 0
+        """
+        if self._width == 0 or self._height == 0:
+            return 0
+        return 2 * (self._width + self._height)
