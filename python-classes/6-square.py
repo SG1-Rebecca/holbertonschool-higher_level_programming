@@ -22,7 +22,7 @@ class Square:
 
         Args:
             size (int): size of the square. Default is 0.
-            position (): 
+            position (tuple): Tuple of 2 positive integers. Default is (0, 0)
 
         Raises:
             TypeError if size is not an integer.
@@ -33,8 +33,8 @@ class Square:
             raise TypeError("size must be an integer")
         if size < 0:
             raise ValueError("size must be >= 0")
-        self._size = size
-        self._position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
