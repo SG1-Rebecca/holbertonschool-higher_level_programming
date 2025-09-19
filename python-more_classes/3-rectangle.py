@@ -115,6 +115,6 @@ class Rectangle:
             return ""
 
         rectangle_rows = []
-        for row in range(self._width):
-            rectangle_rows.append("#" * self._height)
+        for row in range(self._height):
+            rectangle_rows.append("#" * self._width)
         return "\n".join(rectangle_rows)
