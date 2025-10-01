@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-import json
 """
 Module to save an object to a JSON file
 """
+import json
 
 
 def save_to_json_file(my_obj, filename):
@@ -15,5 +15,5 @@ def save_to_json_file(my_obj, filename):
     """
     if isinstance(my_obj, set):
         my_obj = list(my_obj)
-    with open(filename, 'w', encoding="UTF8") as f:
+    with open(filename, 'w', encoding='utf-8') as f:
         json.dump(my_obj, f)

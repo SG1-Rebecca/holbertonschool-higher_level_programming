@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-import json
 """
 Module to convert a JSON string to Python object
 """
+import json
 
 
 def from_json_string(my_str):
@@ -16,4 +16,5 @@ def from_json_string(my_str):
     Returns:
         object: The object represented by the JSON string
     """
-    return json.loads(my_str)
+    o = json.loads(my_str)
+    return o
