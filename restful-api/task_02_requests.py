@@ -1,6 +1,7 @@
 import requests
 import csv
 
+
 def fetch_and_print_posts():
     """
     Fetches all post from JSONPlaceholder
@@ -25,9 +26,14 @@ def fetch_and_save_posts():
 
         filename = "posts.csv"
         with open(filename, "w", encoding="utf-8") as csv_file:
-            csv_write = csv.DictWriter(csv_file, fieldnames=["id", "title", "body"])
+            fieldname = ["id", "title", "body"]
+            csv_write = csv.DictWriter(csv_file, fieldnames=fieldname)
             csv_write.writeheader()
             for post_data in posts:
-                csv_write.writerow({'id': post_data['id'], 'title': post_data['title'], 'body': post_data['body']})
+                csv_write.writerow({
+                    'id': post_data['id'],
+                    'title': post_data['title'],
+                    'body': post_data['body']
+                })
     else:
         print("Failed to fetch posts")
