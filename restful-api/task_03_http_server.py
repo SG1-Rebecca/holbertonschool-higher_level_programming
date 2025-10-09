@@ -9,6 +9,7 @@ import json
 
 PORT = 8000
 
+
 class Handler(http.server.BaseHTTPRequestHandler):
     """
 
@@ -30,6 +31,13 @@ class Handler(http.server.BaseHTTPRequestHandler):
             self.send_header("Content-type", "application/json")
             self.end_headers()
             self.wfile.write(json_data)
+
+        elif self.path == "/status":
+            self.send_response(200)
+            self.send_header("Content-type", "text/plain")
+            self.end_headers()
+            self.wfile.write(b"OK")
+
 
 if __name__ == "__main__":
     try:
