@@ -38,6 +38,9 @@ class Handler(http.server.BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(b"OK")
 
+        else:
+            self.send_error(404, "Endpoint not found")
+
 
 if __name__ == "__main__":
     try:
