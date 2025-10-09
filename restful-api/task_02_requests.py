@@ -1,3 +1,8 @@
+#!/usr/bin/python3
+"""
+Module to fetch and print posts from JSONPlaceholder
+"""
+
 import requests
 import csv
 
