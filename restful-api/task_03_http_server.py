@@ -16,11 +16,12 @@ class Handler(http.server.BaseHTTPRequestHandler):
     def do_GET(self):
         """
         """
-        self.send_response_only(200)
         # add condition for if endpoint is /data , /status and /
         if self.path == "/":
-            send_response = "Hello, this is a simple API!"
-
+            self.send_response_only(200)
+            self.send_header("Content-type", "text/plain")
+            self.end_headers()
+            self.wfile.write(b"Hello, this is a simple API!\n")
 
 if __name__ == "__main__":
     with socketserver.TCPServer(("", PORT), Handler) as httpd:
