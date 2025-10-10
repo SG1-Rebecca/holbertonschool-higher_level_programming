@@ -3,14 +3,14 @@
 Module to set up a simple HTTP server.
 """
 
-import http.server
+from http.server import BaseHTTPRequestHandler
 import socketserver
 import json
 
 PORT = 8000
 
 
-class Handler(http.server.BaseHTTPRequestHandler):
+class Handler(BaseHTTPRequestHandler):
     """
     Custon HTTP request handler.
     """
@@ -25,8 +25,8 @@ class Handler(http.server.BaseHTTPRequestHandler):
             self.wfile.write(b"Hello, this is a simple API!\n")
 
         elif self.path == "/data":
-            error = {"name": "John", "age": 30, "city": "New York"}
-            json_data = json.dumps(error).encode("utf-8")
+            data = {"name": "John", "age": 30, "city": "New York"}
+            json_data = json.dumps(data).encode()
             self.send_response(200)
             self.send_header("Content-type", "application/json")
             self.end_headers()
