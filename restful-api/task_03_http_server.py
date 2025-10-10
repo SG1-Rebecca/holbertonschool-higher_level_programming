@@ -4,7 +4,6 @@ Module to set up a simple HTTP server.
 """
 
 import http.server
-import socketserver
 import json
 
 
@@ -54,8 +53,10 @@ class Handler(http.server.BaseHTTPRequestHandler):
 
 if __name__ == "__main__":
     PORT = 8000
+    server_adress = ("", PORT)
+
     try:
-        with socketserver.TCPServer(("", PORT), Handler) as httpd:
+        with http.server.HTTPServer(server_adress, Handler) as httpd:
             print(f"Serving at port {PORT}: http://localhost:{PORT}")
             httpd.serve_forever()
     except KeyboardInterrupt:
