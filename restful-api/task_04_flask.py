@@ -5,6 +5,8 @@ from flask import Flask, jsonify
 
 app = Flask(__name__)
 
+users = {}
+
 @app.route("/")
 def home():
     """
@@ -14,9 +16,11 @@ def home():
 @app.route("/data")
 def serving_json_data():
     """
+    Return a list of all the usernames stored in the API.
     """
-    data = users = {"jane": {"name": "Jane", "age": 28, "city": "Los Angeles"}}
-    return jsonify(data)
+    return jsonify(users)
 
 
-if __name__ == "__main__": app.run()
+if __name__ == "__main__": 
+    app.run()
+    
