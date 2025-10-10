@@ -25,8 +25,8 @@ class Handler(http.server.BaseHTTPRequestHandler):
             self.wfile.write(b"Hello, this is a simple API!\n")
 
         elif self.path == "/data":
-            data = {"name": "John", "age": 30, "city": "New York"}
-            json_data = json.dumps(data).encode("utf-8")
+            error = {"name": "John", "age": 30, "city": "New York"}
+            json_data = json.dumps(error).encode("utf-8")
             self.send_response(200)
             self.send_header("Content-type", "application/json")
             self.end_headers()
@@ -47,7 +47,11 @@ class Handler(http.server.BaseHTTPRequestHandler):
             self.wfile.write(json_info)
 
         else:
-            self.send_error(404, "Endpoint not found")
+            self.send_response(404)
+            self.send_header("Content-type", "application/json")
+            self.end_headers()
+            self.wfile.write(b"Endpoint not found")
+
 
 
 if __name__ == "__main__":
