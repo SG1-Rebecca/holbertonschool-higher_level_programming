@@ -53,7 +53,9 @@ class Handler(http.server.BaseHTTPRequestHandler):
 if __name__ == "__main__":
     try:
         with socketserver.TCPServer(("", PORT), Handler) as httpd:
-            print("serving at port", PORT)
+            print(f"Serving at port {PORT}: http://localhost:{PORT}")
             httpd.serve_forever()
     except KeyboardInterrupt:
-        print("Server stopped.")
+        print("\nServer stopped.")
+    except OSError as error:
+        print(error)
