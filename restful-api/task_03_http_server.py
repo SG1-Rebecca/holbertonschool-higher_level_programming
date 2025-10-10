@@ -12,12 +12,12 @@ PORT = 8000
 
 class Handler(http.server.BaseHTTPRequestHandler):
     """
-
+    Custon HTTP request handler.
     """
     def do_GET(self):
         """
+        Handles GET requests based on different endpoints.
         """
-        # add condition for if endpoint is /data , /status and /
         if self.path == "/":
             self.send_response(200)
             self.send_header("Content-type", "text/plain")
