@@ -10,7 +10,7 @@ import json
 
 class Handler(http.server.BaseHTTPRequestHandler):
     """
-    Custon HTTP request handler.
+    Custom HTTP request handler.
     """
 
     def do_GET(self):
