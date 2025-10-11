@@ -20,6 +20,13 @@ def serving_json_data():
     """
     return jsonify(users)
 
+@app.route("/status")
+def status():
+    """
+    Return OK status.
+    """
+    return jsonify({"status": "OK"}), 200
+
 
 if __name__ == "__main__": 
     app.run()
