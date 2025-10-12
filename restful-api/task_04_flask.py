@@ -20,7 +20,7 @@ def serving_json_data():
     """
     Return a list of all the usernames stored in the API.
     """
-    return jsonify(users)
+    return jsonify(list(users.keys()))
 
 
 @app.route("/status")
