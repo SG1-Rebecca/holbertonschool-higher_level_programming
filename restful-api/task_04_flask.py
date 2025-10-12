@@ -32,7 +32,7 @@ def status():
 
 
 @app.route("/users/<string:username>")
-def usernames(username):
+def get_user_by_username(username):
     """
     Return the full object corresponding to the provided username
     """
