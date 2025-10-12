@@ -1,7 +1,3 @@
-#!/usr/bin/python3
-"""
-Module: Simple RESTful API with Flask for basic user management.
-"""
 from flask import Flask, jsonify, request
 
 app = Flask(__name__)
