@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """
+Module: Simple RESTful API with Flask for basic user management.
 """
 from flask import Flask, jsonify, request
 
@@ -11,6 +12,7 @@ users = {}
 @app.route("/")
 def home():
     """
+    Return a string message
     """
     return "Welcome to the Flask API!"
 
