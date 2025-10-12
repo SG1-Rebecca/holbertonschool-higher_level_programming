@@ -28,7 +28,7 @@ def status():
     """
     Return OK status.
     """
-    return jsonify({"status": "OK"}), 200
+    return "OK", 200
 
 
 @app.route("/users/<string:username>")
