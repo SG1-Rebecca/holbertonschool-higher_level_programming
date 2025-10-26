@@ -21,7 +21,7 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     # Execute the query
-    cursor.execute("SELECT * FROM states ORDER BY id ASC LIMIT 5")
+    cursor.execute("SELECT * FROM states ORDER BY id ASC;")
 
     # Fetch the result
     states = cursor.fetchall()
