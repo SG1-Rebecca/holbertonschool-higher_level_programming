@@ -6,7 +6,7 @@ import sys
 if __name__ == "__main__":
     """
     Script to connects to a MySQL database
-    and retrieves states matching a the argument.
+    and retrieves states matching the argument.
     """
 
     # Connect to database
@@ -24,7 +24,7 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     # Execute the query to prevent SQL injection
-    cursor.execute("SELECT * FROM states WHERE name = %s ORDER BY id ASC;", (state_name,))
+    cursor.execute("SELECT * FROM states WHERE name = %s ORDER BY id ASC", (state_name,))
 
     # Fetch the result
     filter_states_input = cursor.fetchall()

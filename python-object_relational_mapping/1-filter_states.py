@@ -6,7 +6,7 @@ import sys
 if __name__ == "__main__":
     """
     Script to connects to a MySQL database
-    and retrieves all states in ascending order.
+    and retrieves all states starting with N in ascending order.
     """
     # Connect to database
     db = MySQLdb.connect(
@@ -21,7 +21,7 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     # Execute the query
-    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC;")
+    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
 
     # Fetch the result
     filter_states_by_n = cursor.fetchall()
