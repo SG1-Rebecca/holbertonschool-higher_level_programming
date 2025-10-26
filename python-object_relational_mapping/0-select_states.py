@@ -17,18 +17,19 @@ if __name__ == "__main__":
         db=sys.argv[3]
     )
 
-    #
+    # Create a cursor object
     cursor = db.cursor()
 
     # Execute the query
-    cursor.execute("SELECT * FROM states ORDER BY id ASC")
+    cursor.execute("SELECT * FROM states ORDER BY id ASC LIMIT 5")
 
     # Fetch the result
     states = cursor.fetchall()
 
+    # Browse and print the results
     for state in states:
         print(state)
 
-    # Close conne
+    # Clean up
     cursor.close()
     db.close()
