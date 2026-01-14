@@ -8,6 +8,6 @@ if __name__ == "__main__":
     elif nb_arguments == 1:
         print("1 argument:")
     else:
-        print(f"{nb_arguments} arguments: ")
-    for n, display_args in enumerate(parse_arguments):
-        print(f"{n + 1}: {display_args}")
+        print("{} arguments: ".format(nb_arguments))
+    for words in range(1, nb_arguments + 1):
+        print("{}: {}".format(words, sys.argv[words]))
