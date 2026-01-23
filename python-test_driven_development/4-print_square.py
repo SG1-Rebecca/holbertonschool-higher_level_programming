@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Docstring for 4-print_square
+Module 4-print_square
 """
 
 
