@@ -9,8 +9,8 @@ def add_integer(a, b=98):
     Function that adds two integers.
 
     Args:
-        a: first integer
-        b: second integer
+        a (int, float): first integer
+        b (int, float): second integer, default is 98
 
     Return:
         int: The sum of a and b
