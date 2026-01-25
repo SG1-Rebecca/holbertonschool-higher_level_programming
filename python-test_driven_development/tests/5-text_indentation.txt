@@ -8,9 +8,9 @@ Using ``text_indentation``
 
 >>> text_indentation("Hello. This is an nightmare! Do you copy?")
 Hello.
-
+<BLANKLINE>
 This is an nightmare! Do you copy?
-
+<BLANKLINE>
 
 A TypeError is raised if text is not a string:
 
