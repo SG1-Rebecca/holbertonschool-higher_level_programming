@@ -16,15 +16,17 @@ def text_indentation(text):
         raise TypeError("text must be a string")
 
     separators = ".?:"
-    line = ""
+    idx = 0
 
-    for char in text:
-        line += char
+    while idx < len(text):
+        print(text[idx], end="")
 
-        if char in separators:
-            print(line.strip())
-            print()
-            line = ""
+        if text[idx] in separators:
+            print("\n")
+            idx += 1
 
-    if line.strip():
-        print(line.strip())
+            while idx < len(text) and text[idx] == " ":
+                idx += 1
+            continue
+
+        idx += 1
