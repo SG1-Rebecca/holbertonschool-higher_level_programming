@@ -22,6 +22,7 @@ class Rectangle:
         Args:
             width (int): The width of the rectangle. Default is 0.
             height (int): The height of the rectangle. Default is 0.
+        Increases the instance counter.
         """
         self.width = width
         self.height = height
@@ -126,6 +127,7 @@ class Rectangle:
     def __del__(self):
         """
         Prints a message when an instance of Rectangle is deleted.
+        Decreases the instance counter.
         """
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
