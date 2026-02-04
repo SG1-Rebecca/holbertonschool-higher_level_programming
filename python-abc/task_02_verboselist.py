@@ -26,8 +26,8 @@ class VerboseList(list):
         """
         Remove a value from the list and print a message
         """
-        super().remove(value)
         print(f"Removed {[value]} from the list.")
+        super().remove(value)
 
     def pop(self, index=-1):
         """
@@ -35,3 +35,4 @@ class VerboseList(list):
         """
         poped_value = super().pop(index)
         print(f"Popped {[poped_value]} from the list.")
+        return poped_value
