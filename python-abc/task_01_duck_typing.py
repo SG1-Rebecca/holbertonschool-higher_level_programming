@@ -37,7 +37,7 @@ class Circle(Shape):
         """
         Initializes a Circle instance with radius
         """
-        self.radius = radius
+        self.radius = abs(radius)
 
     def area(self):
         """
@@ -60,8 +60,8 @@ class Rectangle(Shape):
         """
         Initializes a Rectangle instance with width and height
         """
-        self.width = width
-        self.height = height
+        self.width = abs(width)
+        self.height = abs(height)
 
     def area(self):
         """
