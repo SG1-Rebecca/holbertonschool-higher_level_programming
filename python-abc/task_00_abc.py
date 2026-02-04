@@ -37,4 +37,4 @@ class Cat(Animal):
         """
         Returns the sound of the cat
         """
-        return "meow"
+        return "Meow"
