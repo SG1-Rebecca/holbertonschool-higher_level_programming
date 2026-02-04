@@ -81,5 +81,5 @@ def shape_info(shape):
     Prints the area and perimeter of the given shape
     by duck typing.
     """
-    print(f"Area: {shape.area()}")
-    print(f"Perimeter: {shape.perimeter()}")
+    print("Area: {}".format(shape.area()))
+    print("Perimeter: {}".format(shape.perimeter()))
