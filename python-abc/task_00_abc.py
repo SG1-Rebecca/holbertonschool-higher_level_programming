@@ -26,7 +26,7 @@ class Dog(Animal):
         """
         Returns the sound of the dog
         """
-        return "bark"
+        return "Bark"
 
 
 class Cat(Animal):
