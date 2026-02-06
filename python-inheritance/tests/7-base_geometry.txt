@@ -22,3 +22,33 @@
 ... except Exception as e:
 ...     print("[{}] {}".format(e.__class__.__name__, e))
 [ValueError] distance must be greater than 0
+
+>>> try:
+...    bg.integer_validator(3.14, 3.14)
+... except Exception as e:
+...    print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] 3.14 must be an integer
+
+>>> try:
+...    bg.integer_validator("empty", None)
+... except Exception as e:
+...    print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] empty must be an integer
+
+>>> try:
+...    bg.integer_validator("bool", True)
+... except Exception as e:
+...    print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] bool must be an integer
+
+>>> try:
+...    bg.integer_validator("items", [1, 2, 3])
+... except Exception as e:
+...    print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] items must be an integer
+
+>>> try:
+...    bg.integer_validator("dict", {"key": "value"})
+... except Exception as e:
+...    print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] dict must be an integer
