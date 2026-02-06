@@ -15,4 +15,5 @@ class MyList(list):
         """
         Prints the list in sorted order
         """
-        print(sorted(self))
+        sort_list = sorted(self) 
+        print(sort_list)
