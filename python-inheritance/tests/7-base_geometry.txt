@@ -52,3 +52,14 @@
 ... except Exception as e:
 ...    print("[{}] {}".format(e.__class__.__name__, e))
 [TypeError] dict must be an integer
+
+>>> try:
+...    bg.integer_validator("", 9)
+... except Exception as e:
+...    print("[{}] {}".format(e.__class__.__name__, e))
+
+>>> try:
+...    bg.integer_validator("", 0)
+... except Exception as e:
+...    print("[{}] {}".format(e.__class__.__name__, e))
+[ValueError]  must be greater than 0
