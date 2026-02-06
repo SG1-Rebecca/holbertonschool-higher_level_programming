@@ -6,13 +6,10 @@ Module 1-my_list
 
 class MyList(list):
     """
-    A MyList class that inherits from list
-
-    Args:
-        list (list): The built-in list class
+    Defines a class MyList that inherits from list.
     """
     def print_sorted(self):
         """
-        Prints the list in sorted order
+        Prints the list in ascending sorted order.
         """
         print(sorted(self))
