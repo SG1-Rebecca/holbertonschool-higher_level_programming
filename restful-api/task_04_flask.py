@@ -1,11 +1,6 @@
 from flask import Flask, jsonify, request
 
-users = {"john": {
-        "username": "john",
-        "name": "John",
-        "age": 30,
-        "city": "New York"
-}}
+users = {}
 
 app = Flask(__name__)
 
@@ -67,10 +62,13 @@ def add_user():
     users[username] = user_data
 
     return jsonify({
-        "username": username,
-        "name": user_data.get("name"),
-        "age": user_data.get("age"),
-        "city": user_data.get("city")
+        "message": "User added",
+        "user": {
+            "username": username,
+            "name": user_data.get("name"),
+            "age": user_data.get("age"),
+            "city": user_data.get("city")
+        }
     }), 201
 
 
