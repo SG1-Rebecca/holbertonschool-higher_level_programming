@@ -30,16 +30,14 @@ def status():
 
 
 @app.route("/users/<string:username>", methods=["GET"])
-def user(username):
+def get_user(username):
     """
     Returns the full object corresponding to the provided username
     """
-    user = users.get(username.lower())
-
+    user = users.get(username)
     if not user:
         return jsonify({"error": "User not found"}), 404
-
-    return jsonify(user), 200
+    return jsonify(user)
 
 
 @app.route("/add_user", methods=["POST"])
@@ -47,12 +45,12 @@ def add_user():
     """
     Add the new user to the users dictionary using username as the key.
     """
-    user_data = request.get_json()
-    username = user_data.get("username")
+    user_data = request.get_json(silent=True)
 
-    if username is None:
+    if user_data is None:
         return jsonify({"error": "Invalid JSON"}), 400
 
+    username = user_data.get("username")
     if not username:
         return jsonify({"error": "Username is required"}), 400
 
@@ -63,12 +61,7 @@ def add_user():
 
     return jsonify({
         "message": "User added",
-        "user": {
-            "username": username,
-            "name": user_data.get("name"),
-            "age": user_data.get("age"),
-            "city": user_data.get("city")
-        }
+        "user": user_data
     }), 201
 
 
