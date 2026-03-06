@@ -19,11 +19,10 @@ if __name__ == "__main__":
         user=username,
         passwd=password,
         db=database
-        charset="utf8"
     )
 
     cursor = db.cursor()
-    query = "SELECT * FROM states WHERE BINARY name = '{}' ORDER BY id ASC"
+    query = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC"
     cursor.execute(query.format(state_name))
     states = cursor.fetchall()
 
