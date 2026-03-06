@@ -26,8 +26,8 @@ if __name__ == "__main__":
     cursor.execute(query.format(state_name))
     states = cursor.fetchall()
 
-    for my_filter_state in states:
-        print(my_filter_state)
+    for state in states:
+        print(state)
 
     cursor.close()
     db.close()
